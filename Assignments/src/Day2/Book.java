@@ -1,4 +1,6 @@
-package com.mmcoe.lib;
+package Day2;
+
+//import com.mmcoe.lib.Member;
 
 public class Book {
 	private String title;

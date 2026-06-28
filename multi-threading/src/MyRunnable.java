@@ -1,0 +1,30 @@
+
+public class MyRunnable implements Runnable {
+
+	private int data;
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		String tname = Thread.currentThread().getName();
+
+		for (int c = 1; c <= 50; c++) {
+			System.out.println(tname + ": " + ++data);
+		}
+	}
+
+	public static void main(String[] args) {
+		MyRunnable mr = new MyRunnable();
+		Thread t1 = new Thread(mr,"First");
+		Thread t2 = new Thread(mr,"Second");
+		Thread t3 = new Thread(mr,"Third");
+
+//		t1.setPriority(MAX_PRIORITY);
+//		t2.setPriority(MIN_PRIORITY);
+
+		t1.start();
+		t2.start();
+		t3.start();
+
+	}
+}

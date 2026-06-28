@@ -1,4 +1,4 @@
-package com.mmcoe.lib;
+package Day2;
 
 public class Member {
 	private String name;

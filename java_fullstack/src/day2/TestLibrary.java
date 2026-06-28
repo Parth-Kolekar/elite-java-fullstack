@@ -1,7 +1,7 @@
 package day2;
 
-import com.mmcoe.lib.Book;
-import com.mmcoe.lib.Member;
+import Day2.Book;
+import Day2.Member;
 
 public class TestLibrary {
 
