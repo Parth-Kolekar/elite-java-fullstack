@@ -1,26 +1,30 @@
 package Day4;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Team {
+    private String key;
+    private String name;
+    private String city;
 
-    protected String teamName;
-    protected List<Player> players;
-
-    public Team(String teamName) {
-        this.teamName = teamName;
-        this.players = new ArrayList<>();
+    public Team(String key, String name, String city) {
+        this.key = key;
+        this.name = name;
+        this.city = city;
     }
 
-    public void addPlayer(Player player) {
-        players.add(player);
+    public String getKey() {
+        return key;
     }
 
-    public void displayDetails() {
-        System.out.println("\nTeam : " + teamName);
+    public String getName() {
+        return name;
+    }
 
-        for (Player p : players) {
-            System.out.println("Player : " + p);
-        }
+    public String getCity() {
+        return city;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + city + ") [" + key.toUpperCase() + "]";
     }
 }
