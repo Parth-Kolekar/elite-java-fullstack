@@ -13,11 +13,13 @@ public class TestBook {
 	public static void main(String[] args) {
 		BookDao dao=new BookDaoCollectionImpl();
 		BookService service=new BookServiceImpl(dao);
-		service.save(new Book(10, "abc", "xyz", 500));
-		service.save(new Book(11, "abc1", "xyz1", 400));
+		service.save(new Book(10, "xyz", "xyz", 500));
+		service.save(new Book(11, "lmn", "xyz1", 400));
 		service.save(new Book(12, "abc2", "xyz2", 550));
 		for(Book b:service.list())
 			System.out.println(b);
+		
+		System.out.println("----------");
 		
 		try {
 			System.out.println(service.find(12));
@@ -25,15 +27,20 @@ public class TestBook {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("----------");
 		
 		for (Book b : service.findByPrice(400, 600)) {
 			System.out.println(b);
 		}
-		try {
-			service.delete(10);
-		} catch (BookNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			service.delete(10);
+//		} catch (BookNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		System.out.println("----------");
+		
+		service.ListOrderByTitle().forEach(System.out ::println);
 	}
 }
